@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="MilkySpit:jar">
-    <output-path>$PROJECT_DIR$/../../test228/plugins</output-path>
-    <root id="archive" name="MilkySpit.jar">
-      <element id="module-output" name="MilkySpit" />
-    </root>
-  </artifact>
-</component>
