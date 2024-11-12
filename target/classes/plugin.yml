@@ -1,0 +1,10 @@
+name: MilkySpit
+version: '1.0'
+main: milkyland.milkyspit.Plugin
+
+commands:
+  spit:
+
+permissions:
+  milkyspit.use:
+    default: op

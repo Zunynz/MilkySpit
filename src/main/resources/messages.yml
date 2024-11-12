@@ -1,0 +1,10 @@
+cooldowns:
+  spit: 'Your saliva has run out, please wait another %time% seconds.'  # message on spit cooldown, don't change %time%
+
+error:
+  only_for_player: '&c[⚠] This command is available only for players.'  # if sender is console
+  not_enough_perms: '&c[⚠] Not enough perms.'  # if player don't have milkyspit.use perm.
+
+messages:
+  spited_on_player: 'Player %playerName% spited on you! Use /spit to spit on him.'  # if player spited on you, don't change %playerName%
+  you_spited_on_player: 'You spited on player %playerName%.'  # if you spited on another player, don't change %playerName%
