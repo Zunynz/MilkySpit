@@ -1,0 +1,4 @@
+cooldowns:
+  spit: 10 #  in seconds
+
+damage_from_spit: false  # true/false, removes damage from spit

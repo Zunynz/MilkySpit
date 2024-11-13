@@ -1,6 +1,5 @@
 package milkyland.milkyspit.listeners;
 
-import milkyland.milkyspit.utils.ChatUtil;
 import milkyland.milkyspit.utils.ConfigManager;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
@@ -33,23 +32,22 @@ public class SpitHitListener implements Listener {
             return;
         }
 
-        Entity hitEntity = e.getEntity();
-
-        if (hitEntity.getType() != EntityType.PLAYER) {
-            return;
+        if (ConfigManager.instance.get("config").getBoolean("remove_damage_from_spit")) {
+            System.out.println("123");
+            e.setCancelled(true);
         }
 
-        Player hitPlayer = (Player) hitEntity;
-        Player playerShooter = (Player) shooter;
+        Entity hitEntity = e.getEntity();
 
-        String spited = ConfigManager.instance.get("messages").getString("messages.spited_on_player").replace("%playerName%", playerShooter.getName());
-        String you_spited = ConfigManager.instance.get("messages").getString("messages.you_spited_on_player").replace("%playerName%", hitPlayer.getName());
+        if (hitEntity instanceof Player) {
+            Player hitPlayer = (Player) hitEntity;
+            Player playerShooter = (Player) shooter;
 
-        hitPlayer.sendMessage(color(spited));
-        playerShooter.sendMessage(color(you_spited));
+            String spited = ConfigManager.instance.get("messages").getString("messages.spat_on_player").replace("%playerName%", playerShooter.getName());
+            String you_spited = ConfigManager.instance.get("messages").getString("messages.you_spat_on_player").replace("%playerName%", hitPlayer.getName());
 
-        if (!ConfigManager.instance.get("config").getBoolean("remove_damage_from_spit")) {
-            e.setCancelled(true);
+            hitPlayer.sendMessage(color(spited));
+            playerShooter.sendMessage(color(you_spited));
         }
     }
 }

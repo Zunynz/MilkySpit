@@ -28,15 +28,27 @@ public class SpitCMD implements CommandExecutor {
             return true;
         }
 
-        if (CoolDownManager.checkSpitCooldown(player)) {
-            CoolDownManager.setSpitCooldown(player, ConfigManager.instance.get("config").getInt("cooldowns.spit"));
+        if (args.length == 0) {
+            if (CoolDownManager.checkSpitCooldown(player)) {
+                CoolDownManager.setSpitCooldown(player, ConfigManager.instance.get("config").getInt("cooldowns.spit"));
 
-            Vector vector = player.getEyeLocation().getDirection().multiply(0.8);
-            player.launchProjectile(LlamaSpit.class, vector);
-            player.playSound(player.getLocation(), Sound.ENTITY_LLAMA_SPIT, 1.0F, 1.0F);
+                Vector vector = player.getEyeLocation().getDirection().multiply(0.8);
+                player.launchProjectile(LlamaSpit.class, vector);
+                player.playSound(player.getLocation(), Sound.ENTITY_LLAMA_SPIT, 1.0F, 1.0F);
+            } else {
+                String message = ConfigManager.instance.get("messages").getString("cooldowns.spit").replace("%time%", String.valueOf(CoolDownManager.getSpitCooldown(player)));
+                player.sendMessage(color(message));
+            }
         } else {
-            String message = ConfigManager.instance.get("messages").getString("cooldowns.spit").replace("%time%", String.valueOf(CoolDownManager.getSpitCooldown(player)));
-            player.sendMessage(color(message));
+            switch (args[0].toLowerCase()) {
+                case "reload":
+                    ConfigManager.instance.reload();
+                    ChatUtil.sendConfigMessage(player, "messages.reloaded");
+                    return true;
+
+                default:
+                    ChatUtil.sendConfigMessage(player, "error.too_many_args");
+            }
         }
         return true;
     }

@@ -5,6 +5,7 @@ import milkyland.milkyspit.commands.SpitCMD;
 import milkyland.milkyspit.listeners.SpitHitListener;
 import milkyland.milkyspit.utils.ConfigManager;
 import milkyland.milkyspit.utils.CoolDownManager;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -25,10 +26,23 @@ public final class Plugin extends JavaPlugin {
         ConfigManager.instance.init("config", "messages");
 
         CoolDownManager.setupCooldown();
+
+        credits();
     }
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
+    }
+
+    private void credits() {
+        getLogger().info("\n" +
+                "███╗░░░███╗██╗██╗░░░░░██╗░░██╗██╗░░░██╗░██████╗██████╗░██╗████████╗\n" +
+                "████╗░████║██║██║░░░░░██║░██╔╝╚██╗░██╔╝██╔════╝██╔══██╗██║╚══██╔══╝\n" +
+                "██╔████╔██║██║██║░░░░░█████═╝░░╚████╔╝░╚█████╗░██████╔╝██║░░░██║░░░\n" +
+                "██║╚██╔╝██║██║██║░░░░░██╔═██╗░░░╚██╔╝░░░╚═══██╗██╔═══╝░██║░░░██║░░░\n" +
+                "██║░╚═╝░██║██║███████╗██║░╚██╗░░░██║░░░██████╔╝██║░░░░░██║░░░██║░░░\n" +
+                "╚═╝░░░░░╚═╝╚═╝╚══════╝╚═╝░░╚═╝░░░╚═╝░░░╚═════╝░╚═╝░░░░░╚═╝░░░╚═╝░░░ ");
+        getLogger().info("Made by Zunynz");
+        getLogger().info(" ");
     }
 }
