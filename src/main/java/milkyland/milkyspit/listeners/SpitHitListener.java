@@ -33,7 +33,6 @@ public class SpitHitListener implements Listener {
         }
 
         if (ConfigManager.instance.get("config").getBoolean("remove_damage_from_spit")) {
-            System.out.println("123");
             e.setCancelled(true);
         }
 
