@@ -1,4 +1,6 @@
-cooldowns:
-  spit: 10 #  in seconds
+locale: en_US  # change language (en_US, ru_RU, uk_UA, be_BY, de_DE)
 
-damage_from_spit: false  # true/false, removes damage from spit
+cooldowns:
+  spit: 10  # in seconds
+
+remove_damage_from_spit: true  # true/false, removes damage from spit

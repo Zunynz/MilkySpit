@@ -42,8 +42,8 @@ public class SpitHitListener implements Listener {
             Player hitPlayer = (Player) hitEntity;
             Player playerShooter = (Player) shooter;
 
-            String spited = ConfigManager.instance.get("messages").getString("messages.spat_on_player").replace("%playerName%", playerShooter.getName());
-            String you_spited = ConfigManager.instance.get("messages").getString("messages.you_spat_on_player").replace("%playerName%", hitPlayer.getName());
+            String spited = ConfigManager.instance.getLocaleConfig().getString("messages.spat_on_player").replace("%playerName%", playerShooter.getName());
+            String you_spited = ConfigManager.instance.getLocaleConfig().getString("messages.you_spat_on_player").replace("%playerName%", hitPlayer.getName());
 
             hitPlayer.sendMessage(color(spited));
             playerShooter.sendMessage(color(you_spited));

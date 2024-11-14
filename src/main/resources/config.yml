@@ -1,3 +1,5 @@
+locale: en_US  # change language (en_US, ru_RU, uk_UA, be_BY, de_DE)
+
 cooldowns:
   spit: 10  # in seconds
 

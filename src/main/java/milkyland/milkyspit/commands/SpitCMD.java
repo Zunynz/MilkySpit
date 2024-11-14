@@ -36,7 +36,7 @@ public class SpitCMD implements CommandExecutor {
                 player.launchProjectile(LlamaSpit.class, vector);
                 player.playSound(player.getLocation(), Sound.ENTITY_LLAMA_SPIT, 1.0F, 1.0F);
             } else {
-                String message = ConfigManager.instance.get("messages").getString("cooldowns.spit").replace("%time%", String.valueOf(CoolDownManager.getSpitCooldown(player)));
+                String message = ConfigManager.instance.getLocaleConfig().getString("cooldowns.spit").replace("%time%", String.valueOf(CoolDownManager.getSpitCooldown(player)));
                 player.sendMessage(color(message));
             }
         } else {

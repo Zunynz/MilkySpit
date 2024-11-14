@@ -1,0 +1,12 @@
+cooldowns:
+  spit: 'Ihr Speichel ist leer, bitte warten Sie noch %time% Sekunden.'  # Nachricht bei Cooldown der "/spit"-Befehl, %time% nicht ändern.
+
+error:
+  only_for_player: '&c[⚠] Dieser Befehl ist nur für Spieler verfügbar.'  # Wenn der Absender keine Spieler ist.
+  not_enough_perms: '&c[⚠] Nicht genug Berechtigungen.'  # Wenn der Spieler keine milkyspit.use permission hat.
+  too_many_args: '&c[⚠] Zu viele Argumente.'  # Wenn der Spieler zu viele Argumente verwendet. Beispiel: /spit <arg1> <arg2>.
+
+messages:
+  spat_on_player: 'Spieler %playerName% hat auf Sie gespuckt! Benutzen Sie /spit, um zurückzuspucken.'  # Wenn ein Spieler auf Sie gespuckt hat, %playerName% nicht ändern.
+  you_spat_on_player: 'Sie haben auf Spieler %playerName% gespuckt.'  # Wenn Sie auf einen anderen Spieler gespuckt haben, %playerName% nicht ändern.
+  reloaded: 'Sie haben die Konfiguration neu geladen.'  # Wenn Sie /spit reload verwendet haben.

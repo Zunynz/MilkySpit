@@ -14,6 +14,6 @@ public class ChatUtil {
     }
 
     public static void sendConfigMessage(CommandSender recipient, String configPath) {
-        sendMessage(recipient, ConfigManager.instance.get("messages").getString(configPath));
+        sendMessage(recipient, ConfigManager.instance.getLocaleConfig().getString(configPath));
     }
 }
