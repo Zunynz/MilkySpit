@@ -17,6 +17,7 @@ public final class Plugin extends JavaPlugin {
         instance = this;
 
         getCommand("spit").setExecutor(new SpitCMD());
+        getCommand("spit").setTabCompleter(new SpitCMD());
 
         PluginManager pm = getServer().getPluginManager();
 

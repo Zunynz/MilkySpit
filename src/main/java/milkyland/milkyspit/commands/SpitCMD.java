@@ -5,15 +5,18 @@ import milkyland.milkyspit.utils.ConfigManager;
 import milkyland.milkyspit.utils.CoolDownManager;
 import org.bukkit.Sound;
 import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabExecutor;
 import org.bukkit.entity.LlamaSpit;
 import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
 
+import java.util.Arrays;
+import java.util.List;
+
 import static milkyland.milkyspit.utils.ChatUtil.color;
 
-public class SpitCMD implements CommandExecutor {
+public class SpitCMD implements TabExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player)) {
@@ -51,5 +54,14 @@ public class SpitCMD implements CommandExecutor {
             }
         }
         return true;
+    }
+
+    @Override
+    public List<String> onTabComplete(CommandSender sender, Command command, String s, String[] args) {
+        if (sender.isOp()) {
+            return Arrays.asList("reload");
+        }
+
+        return null;
     }
 }
